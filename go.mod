@@ -1,4 +1,4 @@
-module generate-authz-tool
+module github.com/tetrateio/generate-authz-tool
 
 go 1.19
 
