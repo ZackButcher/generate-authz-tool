@@ -76,7 +76,7 @@ func main() {
 			}
 
 			if cfg.server == "" {
-				return fmt.Errorf("server address can't be empty, need an address like 'tsb.yourcorp.com' or an IP like '127.0.1.10'.")
+				return fmt.Errorf("Server address (-s or --server) can't be empty, need an address like 'tsb.yourcorp.com' or an IP like '127.0.1.10'.")
 			} else {
 				// normalize the name; in the client code we prefix every call with `https`, so
 				// strip any prefix on input so that both address with protocol and without work
@@ -190,7 +190,6 @@ func main() {
 	cmd.Flags().BoolVar(&noverbose, "noverbose", false, "Disable verbose output; overrides --verbose (equivalent to --verbose=false)")
 
 	if err := cmd.Execute(); err != nil {
-		fmt.Println("%v", err)
 		os.Exit(-1)
 	}
 }
